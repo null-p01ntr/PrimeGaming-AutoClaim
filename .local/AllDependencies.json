@@ -21211,9 +21211,9 @@
     "restore": {
       "projectUniqueName": "Prime Gaming AutoClaim",
       "projectName": "Prime Gaming AutoClaim",
-      "projectPath": "C:\\Users\\dogac\\_dev\\UiPath\\Project\\Prime Gaming AutoClaim\\.local",
+      "projectPath": "C:\\Users\\dogac\\_dev\\UiPath\\Project\\PrimeGaming-AutoClaim\\.local",
       "packagesPath": "C:\\Users\\dogac\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dogac\\_dev\\UiPath\\Project\\Prime Gaming AutoClaim\\.local"
+      "outputPath": "C:\\Users\\dogac\\_dev\\UiPath\\Project\\PrimeGaming-AutoClaim\\.local"
     },
     "frameworks": {
       "net6.0-windows7.0": {

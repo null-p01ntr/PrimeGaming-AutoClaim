@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LLOJbQbYWF4GYVaYReLnBmAU8/ensH6+VbmTvdibWg9uX6KtMhZHSQA4Av/LT0zjIER2Jepwy62sX6XzyrO1tg==",
+  "dgSpecHash": "oYwx/MTaIZdmbqd4R39oW3G3x7by8mHrD0Xth08ho7/LgBhxxuALONs6HPPFe9a+GfackW2xPu443pXrqF4dxA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\dogac\\_dev\\UiPath\\Project\\Prime Gaming AutoClaim\\.local\\",
+  "projectFilePath": "C:\\Users\\dogac\\_dev\\UiPath\\Project\\PrimeGaming-AutoClaim\\.local\\",
   "expectedPackageFiles": [
     "C:\\Users\\dogac\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
     "C:\\Users\\dogac\\.nuget\\packages\\avalonedit\\6.1.3.50\\avalonedit.6.1.3.50.nupkg.sha512",

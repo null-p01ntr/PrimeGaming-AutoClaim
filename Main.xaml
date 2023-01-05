@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1032,1530</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>928,1275</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="41">
@@ -114,7 +114,7 @@
       <AssemblyReference>UiPath.Interop</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="594,1465" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="558,1210" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="JSONRead" />
       <Variable x:TypeArguments="njl:JObject" Name="SubbedGames" />
@@ -125,75 +125,135 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ReadTextFile File="{x:Null}" Content="[JSONRead]" DisplayName="Read Text File" FileName="SubbedGames.json" sap:VirtualizedContainerService.HintSize="532,80" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
-    <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="532,60" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[SubbedGames]" JsonString="[JSONRead]" />
-    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Private="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" Hidden="False" sap:VirtualizedContainerService.HintSize="532,1134" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" NewSession="True" UiBrowser="[PrimeGamingBrowser]" Url="https://gaming.amazon.com/home">
+    <ui:ReadTextFile File="{x:Null}" Content="[JSONRead]" DisplayName="Read Text File" FileName="SubbedGames.json" sap:VirtualizedContainerService.HintSize="496,80" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
+    <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="496,60" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[SubbedGames]" JsonString="[JSONRead]" />
+    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Private="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" Hidden="False" sap:VirtualizedContainerService.HintSize="496,359" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" NewSession="True" UiBrowser="[PrimeGamingBrowser]" Url="https://gaming.amazon.com/home">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="498,1032" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="462,257" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="436,25" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
-            <Sequence DisplayName="Language Confirm" sap:VirtualizedContainerService.HintSize="436,81" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="400,25" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
+            <Sequence DisplayName="Language Confirm" sap:VirtualizedContainerService.HintSize="400,81" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="SelectedLanguage" />
+              </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-            </Sequence>
-            <ui:ForEach x:TypeArguments="njl:JObject" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="436,608" sap2010:WorkflowViewState.IdRef="ForEach`1_6" Values="[SubbedGames.Item(&quot;Games&quot;)]">
-              <ui:ForEach.Body>
-                <ActivityAction x:TypeArguments="njl:JObject">
-                  <ActivityAction.Argument>
-                    <DelegateInArgument x:TypeArguments="njl:JObject" Name="SubbedGame" />
-                  </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,484" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Language" sap:VirtualizedContainerService.HintSize="338,52" sap2010:WorkflowViewState.IdRef="GetValue_1">
+                <ui:GetValue.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="32bbd026-7eb2-428a-88fc-5dfe3c5c6683" InformativeScreenshot="0338c1c3d8d41670ca0249f1c4abde8d" Selector="&lt;webctrl tag='P' /&gt;" WaitForReady="COMPLETE">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                  </ui:Target>
+                </ui:GetValue.Target>
+                <ui:GetValue.Value>
+                  <OutArgument x:TypeArguments="x:String">[SelectedLanguage]</OutArgument>
+                </ui:GetValue.Value>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:GetValue>
+              <If Condition="[Not SelectedLanguage.Equals(&quot;EN&quot;)]" DisplayName="If not English" sap:VirtualizedContainerService.HintSize="338,376" sap2010:WorkflowViewState.IdRef="If_1">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If.Then>
+                  <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item English" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="English">
+                    <ui:SelectItem.Items>
+                      <scg:List x:TypeArguments="x:String" Capacity="16">
+                        <x:String>Deutsch</x:String>
+                        <x:String>English</x:String>
+                        <x:String>English - UK</x:String>
+                        <x:String>Español - España</x:String>
+                        <x:String>Español - Latinoamérica</x:String>
+                        <x:String>Français</x:String>
+                        <x:String>Italiano</x:String>
+                        <x:String>Nederlands</x:String>
+                        <x:String>Polski</x:String>
+                        <x:String>Português - Brasil</x:String>
+                        <x:String>Português - Europeu</x:String>
+                        <x:String>Svenska</x:String>
+                        <x:String>Türkçe</x:String>
+                        <x:String>عربي</x:String>
+                        <x:String>日本語</x:String>
+                        <x:String>TR</x:String>
+                      </scg:List>
+                    </ui:SelectItem.Items>
+                    <ui:SelectItem.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3a80d7d4-8958-48dc-b0cd-369ae0c19a0f" InformativeScreenshot="6a6feadceec4700b4e9c8965d7242660" Selector="&lt;webctrl tag='P' /&gt;" WaitForReady="COMPLETE">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                      </ui:Target>
+                    </ui:SelectItem.Target>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;Claiming for:&quot; + SubbedGame.ToString]" />
-                    <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="Delay_1" />
-                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Claim Reward.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Claim Reward.xaml">
-                      <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="njl:JObject" x:Key="CurrentGame">[SubbedGame]</InArgument>
-                        <InArgument x:TypeArguments="ui:Browser" x:Key="CurrentBrowser">[PrimeGamingBrowser]</InArgument>
-                      </ui:InvokeWorkflowFile.Arguments>
-                    </ui:InvokeWorkflowFile>
-                  </Sequence>
-                </ActivityAction>
-              </ui:ForEach.Body>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ui:ForEach>
-            <ui:CloseApplication DisplayName="Close Application" sap:VirtualizedContainerService.HintSize="436,87" sap2010:WorkflowViewState.IdRef="CloseApplication_1">
-              <ui:CloseApplication.Target>
-                <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[PrimeGamingBrowser]" Id="0cf09abb-1039-478e-ac19-69490eb8f03b">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ui:CloseApplication.Target>
-            </ui:CloseApplication>
+                  </ui:SelectItem>
+                </If.Then>
+              </If>
+            </Sequence>
           </Sequence>
         </ActivityAction>
       </ui:OpenBrowser.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:OpenBrowser>
+    <ui:ForEach x:TypeArguments="njl:JObject" CurrentIndex="{x:Null}" DisplayName="For Each Game Data" sap:VirtualizedContainerService.HintSize="496,480" sap2010:WorkflowViewState.IdRef="ForEach`1_6" Values="[SubbedGames.Item(&quot;Games&quot;)]">
+      <ui:ForEach.Body>
+        <ActivityAction x:TypeArguments="njl:JObject">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="njl:JObject" Name="SubbedGame" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,354" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;Claiming for:&quot; + SubbedGame.ToString]" />
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Claim Reward.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Claim Reward.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="njl:JObject" x:Key="CurrentGame">
+                  <VisualBasicValue x:TypeArguments="njl:JObject" ExpressionText="SubbedGame" />
+                </InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEach.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ForEach>
   </Sequence>
 </Activity>
