@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>928,1671</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1008,1801</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Claim_Reward_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="45">
@@ -122,15 +122,11 @@
       <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Claim_Reward" sap:VirtualizedContainerService.HintSize="636,1606" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Claim_Reward" sap:VirtualizedContainerService.HintSize="636,1736" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="GameName" />
       <Variable x:TypeArguments="x:String" Name="URL" />
-      <Variable x:TypeArguments="x:Boolean" Name="Claimed">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Boolean" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:Boolean" Default="False" Name="Claimed" />
       <Variable x:TypeArguments="ui:Browser" Name="GameBrowser" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -145,7 +141,7 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_1">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[GameName]</OutArgument>
         </Assign.To>
@@ -153,7 +149,7 @@
           <InArgument x:TypeArguments="x:String">[CurrentGame.Properties(0).Name]</InArgument>
         </Assign.Value>
       </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_2">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[URL]</OutArgument>
         </Assign.To>
@@ -162,7 +158,8 @@
         </Assign.Value>
       </Assign>
     </Sequence>
-    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" Private="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="574,1374" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" NewSession="True" UiBrowser="[GameBrowser]" Url="[URL]">
+    <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="574,90" sap2010:WorkflowViewState.IdRef="Delay_1" />
+    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Private="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" Hidden="False" sap:VirtualizedContainerService.HintSize="574,1374" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" NewSession="True" UiBrowser="[GameBrowser]" Url="[URL]">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
