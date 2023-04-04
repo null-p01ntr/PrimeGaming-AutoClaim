@@ -1,14 +1,14 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Claim_Reward" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Claim_Reward" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="CurrentGame" Type="InArgument(njl:JObject)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1008,1801</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1036,2157</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Claim_Reward_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="45">
+    <scg:List x:TypeArguments="x:String" Capacity="90">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -54,6 +54,9 @@
       <x:String>UiPath.Web</x:String>
       <x:String>System.Security</x:String>
       <x:String>UiPath.Web.Activities</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -122,7 +125,7 @@
       <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Claim_Reward" sap:VirtualizedContainerService.HintSize="636,1736" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Claim_Reward" sap:VirtualizedContainerService.HintSize="668,2092" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="GameName" />
       <Variable x:TypeArguments="x:String" Name="URL" />
@@ -134,14 +137,14 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Parse Game Data" sap:VirtualizedContainerService.HintSize="574,81" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Parse Game Data" sap:VirtualizedContainerService.HintSize="606,80" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[GameName]</OutArgument>
         </Assign.To>
@@ -149,7 +152,7 @@
           <InArgument x:TypeArguments="x:String">[CurrentGame.Properties(0).Name]</InArgument>
         </Assign.Value>
       </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[URL]</OutArgument>
         </Assign.To>
@@ -158,22 +161,22 @@
         </Assign.Value>
       </Assign>
     </Sequence>
-    <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="574,90" sap2010:WorkflowViewState.IdRef="Delay_1" />
-    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Private="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" Hidden="False" sap:VirtualizedContainerService.HintSize="574,1374" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" NewSession="True" UiBrowser="[GameBrowser]" Url="[URL]">
-      <ui:OpenBrowser.Body>
+    <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="606,90" sap2010:WorkflowViewState.IdRef="Delay_1" />
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Prime Gaming - Home Page" sap:VirtualizedContainerService.HintSize="606,1731" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="08666aa5-0eb4-461f-9d48-f55007b42599" Version="V2">
+      <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="540,1272" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="572,1514" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="478,25" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
-            <Assign sap:VirtualizedContainerService.HintSize="478,82" sap2010:WorkflowViewState.IdRef="Assign_4">
+            <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="510,25" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
+            <Assign sap:VirtualizedContainerService.HintSize="510,82" sap2010:WorkflowViewState.IdRef="Assign_4">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Boolean">[Claimed]</OutArgument>
               </Assign.To>
@@ -181,12 +184,12 @@
                 <InArgument x:TypeArguments="x:Boolean">False</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:UiElementExists DisplayName="Element Exists 'SVG'" Exists="[Claimed]" sap:VirtualizedContainerService.HintSize="478,107" sap2010:WorkflowViewState.IdRef="UiElementExists_5">
+            <ui:UiElementExists DisplayName="Element Exists 'SVG'" Exists="[Claimed]" sap:VirtualizedContainerService.HintSize="510,107" sap2010:WorkflowViewState.IdRef="UiElementExists_5">
               <ui:UiElementExists.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b21c645c-b4b4-4891-a14a-19e04c35161d" InformativeScreenshot="67fba2e434fc1c645822a58f1ba3c4f4" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Prime Gaming*' /&gt;&lt;ctrl name='Prime Gaming*' role='document' /&gt;&lt;ctrl name='NotificationSuccess' role='grouping' /&gt;&lt;ctrl role='graphic' /&gt;" TimeoutMS="2000" WaitForReady="COMPLETE" />
               </ui:UiElementExists.Target>
             </ui:UiElementExists>
-            <If Condition="[Claimed]" DisplayName="If Claimed" sap:VirtualizedContainerService.HintSize="478,827" sap2010:WorkflowViewState.IdRef="If_2">
+            <If Condition="[Claimed]" DisplayName="If Claimed" sap:VirtualizedContainerService.HintSize="510,1065" sap2010:WorkflowViewState.IdRef="If_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -194,24 +197,24 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence DisplayName="Log &amp; Continue" sap:VirtualizedContainerService.HintSize="400,358" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="Log &amp; Continue" sap:VirtualizedContainerService.HintSize="376,308" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[&quot;You have already claimed reward for:&quot; + GameName]" />
-                  <ui:MinimizeWindow Window="{x:Null}" DisplayName="Minimize Window" sap:VirtualizedContainerService.HintSize="338,25" sap2010:WorkflowViewState.IdRef="MinimizeWindow_1" />
-                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="338,52" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,90" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[&quot;You have already claimed reward for:&quot; + GameName]" />
+                  <ui:MinimizeWindow Window="{x:Null}" DisplayName="Minimize Window" sap:VirtualizedContainerService.HintSize="334,25" sap2010:WorkflowViewState.IdRef="MinimizeWindow_1" />
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,25" sap2010:WorkflowViewState.IdRef="CommentOut_4">
                     <ui:CommentOut.Body>
-                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,198" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,198" sap2010:WorkflowViewState.IdRef="Sequence_13">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:CloseApplication DisplayName="Close Application" sap:VirtualizedContainerService.HintSize="338,87" sap2010:WorkflowViewState.IdRef="CloseApplication_2">
+                        <ui:CloseApplication DisplayName="Close Application" sap:VirtualizedContainerService.HintSize="388,87" sap2010:WorkflowViewState.IdRef="CloseApplication_2">
                           <ui:CloseApplication.Target>
                             <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[GameBrowser]" Id="7d2ad90f-a1dd-46a1-ac1f-fa643010fdf8" WaitForReady="COMPLETE">
                               <ui:Target.TimeoutMS>
@@ -232,17 +235,17 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence DisplayName="Claim Reward" sap:VirtualizedContainerService.HintSize="400,293" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="Claim Reward" sap:VirtualizedContainerService.HintSize="476,607" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="338,52" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,389" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
@@ -268,7 +271,7 @@
                       </ui:Click>
                     </TryCatch.Try>
                     <TryCatch.Catches>
-                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,176" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,226" sap2010:WorkflowViewState.IdRef="Catch`1_4">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -279,39 +282,31 @@
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                           </ActivityAction.Argument>
-                          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON'" sap:VirtualizedContainerService.HintSize="334,107" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
-                            <ui:Click.CursorPosition>
-                              <ui:CursorPosition Position="Center">
-                                <ui:CursorPosition.OffsetX>
-                                  <InArgument x:TypeArguments="x:Int32" />
-                                </ui:CursorPosition.OffsetX>
-                                <ui:CursorPosition.OffsetY>
-                                  <InArgument x:TypeArguments="x:Int32" />
-                                </ui:CursorPosition.OffsetY>
-                              </ui:CursorPosition>
-                            </ui:Click.CursorPosition>
-                            <ui:Click.Target>
-                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f472a1e7-72fd-4d2d-a7d6-9c84b1ebf430" InformativeScreenshot="fed2b6f2b6e2e8659d533d43b8ea5c92" Selector="&lt;webctrl aaname='Get in-game content' tag='BUTTON' /&gt;">
-                                <ui:Target.TimeoutMS>
-                                  <InArgument x:TypeArguments="x:Int32" />
-                                </ui:Target.TimeoutMS>
-                                <ui:Target.WaitForReady>
-                                  <InArgument x:TypeArguments="ui:WaitForReady" />
-                                </ui:Target.WaitForReady>
-                              </ui:Target>
-                            </ui:Click.Target>
-                          </ui:Click>
+                          <uix:NClick ClickType="Single" DisplayName="Click 'Claim'" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="08666aa5-0eb4-461f-9d48-f55007b42599" Version="V3">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="https://gaming.amazon.com/overwatch2/gp/amzn1.pg.game.ee907232-58fd-463d-86e3-12504e2cee8f" DesignTimeRectangle="311, 1027, 44, 29" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Claim'" FullSelectorArgument="&lt;webctrl aaname='Claim' tag='P' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Claim' tag='P' type='' class='tw-pd-x-05 tw-pd-y-05' check:innerText='Claim' /&gt;" Guid="7ffcf1bf-88b5-4bed-9e3a-e3a48f6fff1d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAhCAYAAACfiCi5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH1SURBVFhH7ZVbK4RBGMd9OrfufQQpkVy5kpQLihSFUOSsXCCH5NQ6HzanyHlzXtuyjmvt3/57mvb1Nu86FENG/bI7z8w885t5ZjatIh34y1gB01gB01gB01gB0/xvgak6YLUPaM/Rx3+CdwW4uL0Z4D4MPN0DjxEg4AfasoGjJWkbLNWPdTLdBDw/AjtT+vhXSSnAhd2FgNgTcLoBbI7IAgLLQGfe5wT6i4HjVcDXqI9/FU+B6gzgfCuxwFtgtFLfRyfQXQBM1ACLXUBv4dv+OuozgZFyOSGeKts4x2yz5OU63GOceApwxx5ugJN1fZy4BQ7mgJcYEE20sVzi8UTbvMTYh33XBuT71aHMz5KMPsg4blYoICeuxh8uJPPp8BQYq5KJd336OHELdOTKjvIzd45lF7mUHdUJ8F4NlMh3nhglmI9zcHzwIDmefXR4CvBIY1FgY0gfJ7oSYuK+IknKeCoB5+JYMrHnZJw4x6s2N54CKmFgRR8nboG5lmT58H/8xaAAL9T1WeoJnAJ8ldiXZaMuntETIP5eqcvwCTBZC7RmSXn4GuT3gQm408NlksQp0J0PXOwYFiDLPfJSOP/4evDyqR8ndQrb41I2vDtsD+7/AgGFWsR7bzv7UU69Rt/NhwV+K1bANFbANFbANFbANFbALMArlhY34Cti2HIAAAAASUVORK5CYII=" InformativeScreenshot="880bf560d415358ba576d87f4a61cf3e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Prime Gaming - Overwatch 2' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                    <uix:Target DesignTimeRectangle="304, 1022, 59, 37" ElementType="Button" FriendlyName="'Claim'" FullSelectorArgument="&lt;webctrl aaname='Claim' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Claim' tag='BUTTON' type='' class='tw-interactive tw-button' check:innerText='Claim' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAD8AAAApCAYAAACC0PFZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJrSURBVGhD7ZpdSxRhFMf9EF1Kt/sBAj9BeBt02UcIRRLxyquIwAsDRTDIKCFJKwMvVNRFepG11reWVSMxX1ra3kws09V13X/75/C443DQjZmQmXkW/uzMc86Z5/k958yZhZ2q6gsxRFUW3ujSxauor4mj7XIO7bUIhchCJrI5WaljeBrDBO0W2dwbcAzP3dGCwiQyqvBhzroRGVV4zTmMsvAW3sJbeNUxjLLwFt7C/x/4yW4gPQT0N+j285Jv8ARbfQPsbQMHe8D+DpBJAX11wKc5GRtt1WOdmuoBDveBlUnd7qd8gSfU7hZQOAC+LAHv47L4zDzwtPHf4IdvAZ/TQOKhbvdTnuG7rgDfPpTg/gATHbqPBj/QDLy6C8w+AwZbTvprun8NiN+RymA1cYzXePtI5uU63DFnyTM8M5X7DWQXdTvlhl9PAkcFIF8aY4kXi6WxabHRh74LI3L+c0Ouz9son5M4bvRWRirNxG/MlOerVJ7hX3TKoj4mdDvlhn9yQzLJY2aMt8rOD8mkBs8+MnJbzlkp3ADOx2swfnO9HE+fSuUZnmVYyANLY7qd0sqeix66KQum/TR4JxjLvHBYtlPOeDNWiTzDm8Vm3ul2yg2f7C2XPL+LRwGFZ/P59fX0yZ3w7P70ZambJhXYzFOpQbkPt7PA63vA4+tS0okH8vzn4pjh8TZZoBN+oAn4vhJgeGr+uXRk54ddmo3K/HAx2V9+KaXOXsHxzbWAwxsZgLOe3fTjxpiufx7yHT5IsvAW3sJbeNUxjLLwFt7Cy0Gk/6KO9MsJkX4thaKRuxOmTSALmdzg1An4aCmGv6mC+pL161NaAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NClick.Target>
+                          </uix:NClick>
                         </ActivityAction>
                       </Catch>
                     </TryCatch.Catches>
                   </TryCatch>
-                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[&quot;Successfully claimed reward for: &quot; + GameName]" />
+                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="434,90" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[&quot;Successfully claimed reward for: &quot; + GameName]" />
                 </Sequence>
               </If.Else>
             </If>
           </Sequence>
         </ActivityAction>
-      </ui:OpenBrowser.Body>
-    </ui:OpenBrowser>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC6SURBVDhPzdLbCcIwGIbhgjdFULxQHEPBHVxHN/CwQRXXcAIXEHdRwQOe4/uFFJqgFxFBf3ja/Dl8zUWT/66sa8ri2tfFhpIbesV8FRmmGrtpr+xZHj14X6GvYIKbM4MXQq/b9TXYYYzULeSHrzCOF8I7xQgHNVo8YYgGdO3i4TCkiQF0xigg37zHEnbhjTNW0F71j2LAJ2zAJZiM8pWAYzgZ4a6AOdbYRtpgoYAaWuhEaqOu/+KXlSRPEU2gKgK7ImwAAAAASUVORK5CYII=" InformativeScreenshot="8b2f7ad5b81c875f533b857ac976e9bc.jpg" Selector="&lt;html app='chrome.exe' title='Prime Gaming - Home Page' /&gt;" Url="[URL]" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
   </Sequence>
 </Activity>

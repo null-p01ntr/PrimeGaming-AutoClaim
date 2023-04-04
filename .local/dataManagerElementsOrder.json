@@ -1,0 +1,32 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Claimablity&Sequence_8",
+        "ClaimedSuccess&Sequence_8",
+        "JSONRead&Sequence_1",
+        "SubbedGames&Sequence_1",
+        "PrimeGamingBrowser&Sequence_1",
+        "SelectedLanguage&Sequence_5",
+        "GameName&Sequence_8",
+        "URL&Sequence_8",
+        "GameBrowser&Sequence_8"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "CurrentGame"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    }
+  ]
+}

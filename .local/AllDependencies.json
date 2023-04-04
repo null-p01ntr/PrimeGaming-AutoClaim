@@ -21205,7 +21205,8 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dogac\\.nuget\\packages\\": {}
+    "C:\\Users\\dogac\\.nuget\\packages\\": {},
+    "C:\\Users\\dogac\\AppData\\Local\\UiPath\\NugetFallbackFolder": {}
   },
   "project": {
     "restore": {
@@ -21213,7 +21214,10 @@
       "projectName": "Prime Gaming AutoClaim",
       "projectPath": "C:\\Users\\dogac\\_dev\\UiPath\\Project\\PrimeGaming-AutoClaim\\.local",
       "packagesPath": "C:\\Users\\dogac\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dogac\\_dev\\UiPath\\Project\\PrimeGaming-AutoClaim\\.local"
+      "outputPath": "C:\\Users\\dogac\\_dev\\UiPath\\Project\\PrimeGaming-AutoClaim\\.local",
+      "fallbackFolders": [
+        "C:\\Users\\dogac\\AppData\\Local\\UiPath\\NugetFallbackFolder"
+      ]
     },
     "frameworks": {
       "net6.0-windows7.0": {

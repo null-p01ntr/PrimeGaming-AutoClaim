@@ -1,7 +1,7 @@
 ﻿{
 	"Games":[
-		{"Wild Rift": "https://gaming.amazon.com/loot/wildrift"},
-		{"Fall Guys": "https://gaming.amazon.com/loot/fallguys"},
-		{"Marvel's Avengers":"https://gaming.amazon.com/loot/avengers"}
+		{"Wild Rift": "https://gaming.amazon.com/gp/amzn1.adg.product.64e8bf59-3a18-4323-8972-018a9dc7641e"},
+		{"Overwatch2":"https://gaming.amazon.com/overwatch2/gp/amzn1.pg.game.ee907232-58fd-463d-86e3-12504e2cee8f"},
+		{"Paladins":"https://gaming.amazon.com/gp/amzn1.adg.product.7be0c833-091a-4e88-9ef1-bbbee66fb69d"}
 	]
 }
